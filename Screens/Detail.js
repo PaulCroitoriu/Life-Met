@@ -1,20 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { Text, View } from "react-native";
+import ListingDetail from "./Components/Listing/ListingDetail.ios";
 
-const Detail = ({ navigation }) => (
-  <View style={styles.container}>
-    <Text>This is Detail Page</Text>
-    <Button onPress={() => navigation.goBack()} title="Home" />
-  </View>
-);
+const Detail = ({ navigation }) => {
+  const item = navigation.getParam("item", {});
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#B4B5C8",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+  return <ListingDetail item={item} />;
+};
 
 export default Detail;
